@@ -9,10 +9,9 @@ session_start();
   $comments = Entity\Bdd::getAllComments($post->id());
 ?>
 
-<h1><?php echo $topic->title();?></h1>
 <p>Publier par <?php echo $createur->pseudo() ?> le <?php echo $post->date() ?></p>
 <div>
-  <h2><?php echo $post->title(); ?></h2>
+  <h2><?php echo $topic->title() ?></h2>
   <p><?php echo $post->content(); ?></p>
 </div>
 

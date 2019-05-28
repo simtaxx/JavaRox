@@ -14,12 +14,11 @@
   require './elements/header.php'
   ?>
   <h1>Créer votre topic</h1>
+  <p><?php echo $_GET['message'];?></p>
   <form action="createTopics.php" method="POST">
     <label for="title">Nom du topic:</label>
     <input type="text" name="title" id="title">
     <h2>Créer votre post</h2>
-    <label for="title_post">Nom du post:</label>
-    <input type="text" name="title_post" id="title_post">
     <label for="content_post">contenu:</label>
     <textarea name="content_post" id="content_post" cols="30" rows="10"></textarea>
     <input type="submit" name="login_post">
