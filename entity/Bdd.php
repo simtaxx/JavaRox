@@ -95,6 +95,13 @@ class Bdd
     return $lastId;
   }
 
+  public static function getLastIdUser()
+  {
+    $stmt = self::getDatabaseConnect()->query("SELECT LAST_INSERT_ID() FROM users");
+    $lastId = $stmt->fetch();
+    return $lastId;
+  }
+
   public static function getAllComments($id)
   {
     $stmt = self::getDatabaseConnect()->prepare("SELECT * FROM commentaires where id_post = :id order by id_comment asc;");

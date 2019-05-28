@@ -15,7 +15,6 @@
   ?>
   <h1>inscription</h1>
   <?php
-  var_dump($_GET['message']);
   if ($_GET['message'] != NULL) {
     ?>
     <p><?php echo $_GET['message'] ?><p>

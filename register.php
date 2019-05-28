@@ -3,7 +3,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 $bdd = new Entity\Bdd();
 $user = $bdd->getUser($_POST['pseudo']);
-$mail = $bdd->getUserByMail($mail)->mail();
+$mail = $bdd->getUserByMail($_POST['email'])->mail();
 $message = "";
 if (!isset($_POST['valider'])) {
   $message = 'Formulaire non envoyé !';
@@ -56,8 +56,10 @@ if (!isset($_POST['valider'])) {
       $_POST['website']
     );
     $newUser->saveBdd();
+    $lastId = Entity\Bdd::getLastIdUser();
+    $newUser->setId($lastId[0]);
     session_start();
-    $_SESSION['user'] = $user;
+    $_SESSION['user'] = $newUser;
     $message = 'vous etes inscrit a Youtaites!';
     header('Location: accueil.php?message=' . $message);
     exit();
