@@ -40,8 +40,6 @@ if (!isset($_POST['valider'])) {
     header('Location: inscription.php?message='.$message);
     exit(); 
 
-  } elseif ($_FILES['icone']['error'] > 0 and $_POST['image']){
-
   } else {
     var_dump($_FILES);
 // $_FILES['icone']['name']     //Le nom original du fichier, comme sur le disque du visiteur (exemple : mon_icone.png).
