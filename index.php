@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,12 @@
   <title>Document</title>
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
-  <?php 
-  require_once __DIR__.'/vendor/autoload.php';
+  <?php
+  require_once __DIR__ . '/vendor/autoload.php';
   require './elements/header.php'
-  
+
   ?>
   <h1>Hello world</h1>
 
@@ -26,6 +28,7 @@
 
 
 
-  <?php require './elements/footer.php'?>
+  <?php require './elements/footer.php' ?>
 </body>
+
 </html>

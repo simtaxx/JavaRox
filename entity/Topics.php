@@ -1,8 +1,10 @@
 <?php
 namespace Entity;
-require_once __DIR__.'/../vendor/autoload.php';
 
-class Topics {
+require_once __DIR__ . '/../vendor/autoload.php';
+
+class Topics
+{
   private $_id;
   private $_title;
   private $_closed;
@@ -35,30 +37,34 @@ class Topics {
 
   public function setId(int $id)
   {
-      $this->_id = $id;
+    $this->_id = $id;
   }
   public function setTitle(string $title)
   {
-      $this->_title = $title;
+    $this->_title = $title;
   }
   public function setClosed(bool $closed)
   {
-      $this->_closed = $closed;
+    $this->_closed = $closed;
   }
   public function setIdUser(int $idUser)
   {
-      $this->_idUser = $idUser;
+    $this->_idUser = $idUser;
   }
 
-  public function saveBdd(){
+  public function saveBdd()
+  {
     $stmt = Bdd::getDatabaseConnect()->prepare("  INSERT INTO topic (
       title_topic,
       closed_topic,
       id_user
     ) VALUES (:title, :closed, :idUser)");
-    $stmt->execute(['title'     =>   $this->_title, 
-                    'closed'    =>   $this->_closed, 
-                    'idUser'    =>   $this->_idUser]
+    $stmt->execute(
+      [
+        'title'     =>   $this->_title,
+        'closed'    =>   $this->_closed,
+        'idUser'    =>   $this->_idUser
+      ]
     );
     $topic = $stmt->fetch();
     return $topic;

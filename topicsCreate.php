@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
+
 <body>
-<?php    
-  require_once __DIR__.'/vendor/autoload.php';
+  <?php
+  require_once __DIR__ . '/vendor/autoload.php';
   require './elements/header.php'
-?>
+  ?>
   <h1>Créer votre topic</h1>
   <form action="createTopics.php" method="POST">
     <label for="title">Nom du topic:</label>
     <input type="text" name="title" id="title">
-  <h2>Créer votre post</h2>
+    <h2>Créer votre post</h2>
     <label for="title_post">Nom du post:</label>
     <input type="text" name="title_post" id="title_post">
     <label for="content_post">contenu:</label>
@@ -23,10 +25,8 @@
     <input type="submit" name="login_post">
   </form>
 
-
-
-
-  <?php require './elements/footer.php'?>
+  <?php require './elements/footer.php' ?>
 </body>
 </body>
+
 </html>

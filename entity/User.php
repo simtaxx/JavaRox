@@ -11,7 +11,7 @@ class User
   private $_mail;
   private $_website;
 
-  function __construct($id,$pseudo,$password,$description,$picture,$mail,$website)
+  function __construct($id, $pseudo, $password, $description, $picture, $mail, $website)
   {
 
     $this->_id = $id;
@@ -19,7 +19,7 @@ class User
     $this->_password = $password;
     $this->_description = $description;
     $this->_picture = $picture;
-    $this->_mail= $mail;
+    $this->_mail = $mail;
     $this->_website = $website;
   }
 
@@ -65,40 +65,41 @@ class User
 
   public function setId(int $id)
   {
-      $this->_id = $id;
+    $this->_id = $id;
   }
 
   public function setPseudo(string $pseudo)
   {
-      $this->_pseudo = $pseudo;
+    $this->_pseudo = $pseudo;
   }
 
   public function setPassword(string $mdp)
   {
-      $this->_password = $mdp;
+    $this->_password = $mdp;
   }
 
   public function setDescription(string $description)
   {
-      $this->_description = $description;
+    $this->_description = $description;
   }
 
   public function setPicture(string $picture)
   {
-      $this->_picture = $picture;
+    $this->_picture = $picture;
   }
 
   public function setWebsite(string $website)
   {
-      $this->_website = $website;
+    $this->_website = $website;
   }
 
   public function setMail(string $mail)
   {
-      $this->_mail = $mail;
+    $this->_mail = $mail;
   }
 
-  public function saveBdd(){
+  public function saveBdd()
+  {
     $stmt = Bdd::getDatabaseConnect()->prepare("  INSERT INTO users (
       pseudo_user,
       password_user,
@@ -107,12 +108,15 @@ class User
       mail_user,
       website_user
     ) VALUES (:pseudo, :password, :description, :picture, :mail, :website)");
-    $stmt->execute(['pseudo'      => $this->_pseudo, 
-                    'password'    => $this->_password, 
-                    'description' => $this->_description, 
-                    'picture'     => $this->_picture, 
-                    'mail'        => $this->_mail, 
-                    'website'     => $this->_website]
+    $stmt->execute(
+      [
+        'pseudo'      => $this->_pseudo,
+        'password'    => $this->_password,
+        'description' => $this->_description,
+        'picture'     => $this->_picture,
+        'mail'        => $this->_mail,
+        'website'     => $this->_website
+      ]
     );
     $user = $stmt->fetch();
     return $user;

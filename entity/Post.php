@@ -10,7 +10,7 @@ class Post
   private $_idUser;
   private $_idTopic;
 
-  function __construct($id,$title,$content,$date,$idUser,$idTopic)
+  function __construct($id, $title, $content, $date, $idUser, $idTopic)
   {
 
     $this->_id = $id;
@@ -18,7 +18,7 @@ class Post
     $this->_content = $content;
     $this->_date = $date;
     $this->_idUser = $idUser;
-    $this->_idTopic= $idTopic;
+    $this->_idTopic = $idTopic;
   }
 
   // Liste des getters
@@ -57,35 +57,36 @@ class Post
 
   public function setId(int $id)
   {
-      $this->_id = $id;
+    $this->_id = $id;
   }
 
   public function setTitle(string $title)
   {
-      $this->_title = $title;
+    $this->_title = $title;
   }
 
   public function setContent(string $content)
   {
-      $this->_content = $content;
+    $this->_content = $content;
   }
 
   public function setDate(string $date)
   {
-      $this->_date = $date;
+    $this->_date = $date;
   }
 
   public function setidUser(int $idUser)
   {
-      $this->_idUser = $idUser;
+    $this->_idUser = $idUser;
   }
 
   public function setidTopic(int $idTopic)
   {
-      $this->_idTopic = $idTopic;
+    $this->_idTopic = $idTopic;
   }
 
-  public function saveBdd(){
+  public function saveBdd()
+  {
     $stmt = Bdd::getDatabaseConnect()->prepare("  INSERT INTO post (
       title_post,
       content_post,
@@ -93,11 +94,14 @@ class Post
       id_user,
       id_topic
     ) VALUES (:title, :content, :date, :idUser, :idTopic);");
-    $stmt->execute(['title'      => $this->_title, 
-                    'content'    => $this->_content, 
-                    'date' => $this->_date, 
-                    'idUser'     => $this->_idUser, 
-                    'idTopic'        => $this->_idTopic]
+    $stmt->execute(
+      [
+        'title'      => $this->_title,
+        'content'    => $this->_content,
+        'date' => $this->_date,
+        'idUser'     => $this->_idUser,
+        'idTopic'        => $this->_idTopic
+      ]
     );
     $post = $stmt->fetch();
     return $post;

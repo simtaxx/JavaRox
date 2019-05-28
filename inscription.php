@@ -15,7 +15,8 @@
   ?>
   <h1>inscription</h1>
   <?php
-  if ($_GET['message']) {
+  var_dump($_GET['message']);
+  if ($_GET['message'] != NULL) {
     ?>
     <p><?php echo $_GET['message'] ?><p>
       <?php
@@ -39,10 +40,6 @@
         <input type="submit" value="Valider" name="valider">
       </form>
 
-
-
       <?php require './elements/footer.php' ?>
 </body>
-</body>
-
 </html>
