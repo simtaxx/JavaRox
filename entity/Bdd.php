@@ -43,4 +43,29 @@ class Bdd
     $user = new User($userSQL['id_user'],$userSQL['pseudo_user'],$userSQL['password_user'],$userSQL['description_user'],$userSQL['picture_user'],$userSQL['mail_user'],$userSQL['website_user']);
     return $user;
   }
+
+  public static function getUserById($id){
+    $stmt = self::getDatabaseConnect()->prepare("SELECT * FROM users WHERE id_user = :id");
+    $stmt->execute(['id' => $id]);
+    $userSQL = $stmt->fetch();
+    $user = new User($userSQL['id_user'],$userSQL['pseudo_user'],$userSQL['password_user'],$userSQL['description_user'],$userSQL['picture_user'],$userSQL['mail_user'],$userSQL['website_user']);
+    return $user;
+  }
+
+  public static function getAllTopics(){
+    $stmt = self::getDatabaseConnect()->query("SELECT * FROM topic order by id_topic desc;");
+    $allTopicsSQL = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $allTopics = [];
+    foreach ($allTopicsSQL as $value) {
+      $topic = new Topics($value['id_topic'],$value['title_topic'],$value['closed_topic'],$value['id_user']);
+      array_push($allTopics, $topic);
+    }
+    return $allTopics;
+  }
+
+  public static function getLastIdTopics(){
+    $stmt = self::getDatabaseConnect()->query("SELECT LAST_INSERT_ID() FROM topic");
+    $lastId = $stmt->fetch();
+    return $lastId;
+  }
 }
