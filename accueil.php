@@ -1,9 +1,17 @@
-<?php require './elements/header.php' ?>
+<?php require './elements/header.php';
+    require_once __DIR__.'/vendor/autoload.php'; 
+    session_start();
+?>
 <h1>Acceuil</h1>
 <?php 
+    if($_GET['message']){
+?>
+<p><?php echo $_GET['message'] ?></p>
+<?php
+    }
+?>
 
-    // include_once('entity/user.php');
-    require_once __DIR__.'/vendor/autoload.php';
-    session_start();
+<?php 
     var_dump($_SESSION['user']);
+    var_dump($_GET);
 ?>
