@@ -21,7 +21,7 @@
       <?php
     }
     ?>
-      <form action="register.php" method="POST">
+      <form action="register.php" method="POST" enctype="multipart/form-data">
         <label for="pseudo">Votre pseudo:</label>
         <input type="text" name="pseudo" id="pseudo">
         <label for="email">Votre email:</label>

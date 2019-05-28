@@ -97,4 +97,24 @@ class User
   {
       $this->_mail = $mail;
   }
+
+  public function saveBdd(){
+    $stmt = Bdd::getDatabaseConnect()->prepare("  INSERT INTO users (
+      pseudo_user,
+      password_user,
+      description_user,
+      picture_user,
+      mail_user,
+      website_user
+    ) VALUES (:pseudo, :password, :description, :picture, :mail, :website)");
+    $stmt->execute(['pseudo'      => $this->_pseudo, 
+                    'password'    => $this->_password, 
+                    'description' => $this->_description, 
+                    'picture'     => $this->_picture, 
+                    'mail'        => $this->_mail, 
+                    'website'     => $this->_website]
+    );
+    $user = $stmt->fetch();
+    return $user;
+  }
 }

@@ -1,9 +1,10 @@
 <?php
 require_once __DIR__.'/vendor/autoload.php';
-include_once('model/model.php');
-$user = getUser($_POST['pseudo']);
-$mail = getUserByMail($mail)->mail();
 
+$bdd = new Entity\Bdd();
+$user = $bdd->getUser($_POST['pseudo']);
+$mail = $bdd->getUserByMail($mail)->mail();
+$message = "";
 if (!isset($_POST['valider'])) {
   $message = 'Formulaire non envoyé !';
   header('Location: inscription.php?message='.$message);
@@ -34,13 +35,20 @@ if (!isset($_POST['valider'])) {
     header('Location: inscription.php?message='.$message);
     exit(); 
 
-  } elseif($mail == null){
+  } elseif($mail != null){
     $message = 'Email deja utiliser!';
     header('Location: inscription.php?message='.$message);
     exit(); 
 
-  } else {
+  } elseif ($_FILES['icone']['error'] > 0 and $_POST['image']){
 
+  } else {
+    var_dump($_FILES);
+// $_FILES['icone']['name']     //Le nom original du fichier, comme sur le disque du visiteur (exemple : mon_icone.png).
+// $_FILES['icone']['type']     //Le type du fichier. Par exemple, cela peut être « image/png ».
+// $_FILES['icone']['size']     //La taille du fichier en octets.
+// $_FILES['icone']['tmp_name'] //L'adresse vers le fichier uploadé dans le répertoire temporaire.
+// $_FILES['icone']['error']    //Le code d'erreur, qui permet de savoir si le fichier a bien été uploadé.
     $hash = password_hash($_POST['mdp1'], PASSWORD_DEFAULT);
     $newUser = new Entity\User('',
                               $_POST['pseudo'],
@@ -51,12 +59,13 @@ if (!isset($_POST['valider'])) {
                               $_POST['website']
     );
     var_dump($newUser);
-    createNewUser($newUser);
+    $newUser->saveBdd();
     session_start();
     $_SESSION['user'] = $user ;
     $message = 'vous etes inscrit a Youtaites!';
-    header('Location: accueil.php?message='.$message);
-    exit(); 
+    var_dump($_FILES);
+    // header('Location: accueil.php?message='.$message);
+    // exit(); 
   }
 }
 
