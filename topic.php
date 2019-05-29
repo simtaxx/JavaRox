@@ -10,6 +10,10 @@ session_start();
 ?>
 
 <p>Publier par <?php echo $createur->pseudo() ?> le <?php echo $post->date() ?></p>
+<form action="aimerAction.php" method="POST">
+  <input type="submit" value="J'aime" name="aimer">
+  <input type="hidden" name="idPost" value="<?php echo $post->id() ?>">
+</form>
 <div>
   <h2><?php echo $topic->title() ?></h2>
   <p><?php echo $post->content(); ?></p>

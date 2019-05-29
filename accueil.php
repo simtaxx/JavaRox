@@ -6,7 +6,6 @@ session_start();
 <h1>Acceuil</h1>
 
 <?php $allTopics = Entity\Bdd::getAllTopics();
-var_dump($_SESSION['user']);
 if ($_GET['message']) {
     ?>
     <p><?php echo $_GET['message']; ?></p>
