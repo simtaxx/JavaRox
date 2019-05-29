@@ -15,7 +15,7 @@
   ?>
   <h1>inscription</h1>
   <?php
-  if ($_GET['message'] != NULL) {
+  if (isset($_GET['message'])) {
     ?>
     <p><?php echo $_GET['message'] ?><p>
       <?php

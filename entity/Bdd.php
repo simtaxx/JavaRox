@@ -114,4 +114,17 @@ class Bdd
     }
     return $allComments;
   }
+
+  public static function getLikeByIdComment($id)
+  {
+    $stmt = self::getDatabaseConnect()->prepare("SELECT * FROM liker where id_comment = :id;");
+    $stmt->execute(['id' => $id]);
+    $allLikeSQL = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $allLikes = [];
+    foreach ($allLikeSQL as $value) {
+      $like = new Liker($value['id_comment'],$value['id_user']);
+      array_push($allLikes, $like);
+    }
+    return $allLikes;
+  }
 }

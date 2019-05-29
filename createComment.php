@@ -6,12 +6,18 @@ $nbComment = count(Entity\Bdd::getAllComments($_POST['idTopic']));
 echo $nbComment;
 //verifier lenvoie du formulaire
 if (!isset($_POST['Publier'])) {
-  echo 'formulaire non envoyé !';
+  $message = 'formulaire non envoyé !';
+  header('Location: topic.php?idTopic='. $_POST['idTopic'].'&message=' . $message);
+  exit();
 } else {
-  if (empty($_POST['title']) && empty($_POST['content'])) {
-    echo 'lourd!';
+  if (empty($_POST['content'])) {
+    $message = 'Contenu vide!';
+    header('Location: topic.php?idTopic='. $_POST['idTopic'].'&message=' . $message);
+    exit();
   } elseif (strlen($_POST['title']) > 100) {
-    echo 'titre du post trop long';
+    $message = 'titre du post trop long!';
+    header('Location: topic.php?idTopic='. $_POST['idTopic'].'&message=' . $message);
+    exit();
   } else {
     $date = date("d-m-Y");
     $newComment = new Entity\Commentaires('', $_POST['content'],$_POST['idPost'],$_SESSION['user']->id(),$date);

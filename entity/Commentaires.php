@@ -76,11 +76,11 @@ class Commentaires
   public function saveBdd()
   {
     $stmt = Bdd::getDatabaseConnect()->prepare("  INSERT INTO commentaires (
-      content_comment,
       id_post,
       id_user,
-      date_comment
-    ) VALUES (:content, :idPost, :idUser, :date)");
+      date_comment,
+      content_comment
+    ) VALUES (:idPost, :idUser, :date,:content)");
     $stmt->execute(
       [
         'content'    => $this->_content,

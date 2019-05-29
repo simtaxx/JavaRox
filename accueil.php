@@ -6,7 +6,7 @@ session_start();
 <h1>Acceuil</h1>
 
 <?php $allTopics = Entity\Bdd::getAllTopics();
-if ($_GET['message']) {
+if (isset($_GET['message'])) {
     ?>
     <p><?php echo $_GET['message']; ?></p>
 <?php

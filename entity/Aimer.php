@@ -63,4 +63,18 @@ class Aimer
       ]
     );
   }
+
+  public function existBdd()
+  {
+    $stmt = Bdd::getDatabaseConnect()->prepare(" SELECT * FROM aimer
+    WHERE id_user = :idUser and id_post = :idPost");
+    $stmt->execute(
+      [
+        'idUser'      => $this->_idUser,
+        'idPost'    => $this->_idPost
+      ]
+    );
+    $user = $stmt->fetch();
+    return $user;
+  }
 }
