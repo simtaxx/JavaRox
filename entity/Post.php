@@ -35,7 +35,9 @@ class Post
 
   public function content()
   {
-    return $this->_content;
+    $Parsedown = new \Parsedown();
+    $Parsedown->setSafeMode(true);
+    return $Parsedown->text($this->_content);
   }
 
   public function date()

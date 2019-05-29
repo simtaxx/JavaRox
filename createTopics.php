@@ -16,10 +16,6 @@ if (!isset($_POST['login_post'])) {
     $message = 'contenu non rempli!';
     header('Location: topicsCreate.php?message=' . $message);
     exit();
-  }elseif (strlen($_POST['title']) > 100) {
-    $message = 'titre du topic trop long!';
-    header('Location: topicsCreate.php?message=' . $message);
-    exit();
   } else {
     $newTopic = new Entity\Topics('', $_POST['title'], 0, $_SESSION['user']->id());
     var_dump($newTopic);
