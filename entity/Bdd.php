@@ -130,14 +130,17 @@ class Bdd
 
   public static function getNbLikePost($id)
   {
-    $stmt = self::getDatabaseConnect()->prepare("SELECT * FROM aimer where id_post = :id;");
+    $stmt = self::getDatabaseConnect()->prepare("SELECT count(*) FROM aimer where id_post = :id;");
     $stmt->execute(['id' => $id]);
-    $allCommentsSQL = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $allComments = [];
-    foreach ($allCommentsSQL as $value) {
-      $comment = new Commentaires($value['id_comment'],$value['content_comment'], $value['id_post'],$value['id_user'],$value['date_comment']);
-      array_push($allComments, $comment);
-    }
-    return $allComments;
+    $count = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $count[0]["count(*)"];
+  }
+
+  public static function getNbLikeCOmment($id)
+  {
+    $stmt = self::getDatabaseConnect()->prepare("SELECT count(*) FROM liker where id_comment = :id;");
+    $stmt->execute(['id' => $id]);
+    $count = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $count[0]["count(*)"];
   }
 }

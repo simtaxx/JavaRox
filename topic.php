@@ -24,9 +24,10 @@ if (isset($_GET['message'])) {
   <input type="hidden" name="idPost" value="<?php echo $post->id() ?>">
   <input type="hidden" name="idTopic" value="<?php echo $_GET['idTopic'] ?>">
 </form>
+<p><?php echo $nbLikePost; ?></p>
 <div>
   <h2><?php
-      echo $topic->title() ?></h2>
+            echo $topic->title() ?></h2>
   <p><?php echo $post->content(); ?></p>
 </div>
 
@@ -40,6 +41,7 @@ if (isset($_GET['message'])) {
 <?php
 foreach ($comments as $comment) {
   $user = Entity\Bdd::getUserById($comment->idUser());
+  $nbLikeComment = Entity\Bdd::getNbLikeCOmment($comment->id());
   ?>
   <div>
     <h2><?php echo $user->pseudo(); ?> le <?php echo $comment->date() ?></h2>
@@ -56,13 +58,7 @@ foreach ($comments as $comment) {
       <input type="hidden" name="idComment" value="<?php echo $comment->id() ?>">
       <input type="hidden" name="idTopic" value="<?php echo $_GET['idTopic'] ?>">
     </form>
-    <?php
-    if (isset($_GET['nbLike' . $comment->id()])) {
-      ?>
-      <p><?php echo $_GET['nbLike' . $comment->id()] ?></p>
-    <?php
-  }
-  ?>
+      <p><?php echo $nbLikeComment ;  ?></p>
   </div>
 <?php
 }
