@@ -1,34 +1,20 @@
-body {
-  font-family: Segoe UI, sans-serif; 
-  font-size: 2rem; 
-  margin: 0;
-}
-
-
-
-main {
-  width: 98vw; 
-  margin: 0 auto; 
-}
-
 /* .connexion {
-  width: 60%; 
-  height: 80vh;
+  width: 100%; 
+  height: 90vh;
   transform: translateY(5vh);
   margin: 0 auto; 
   display: flex; 
   flex-direction: column; 
   justify-content: space-between; 
   align-items: center; 
+  box-shadow: 1px 1px 7px 0px rgba(0,0,0,0.5);
+  background: white; &
 }
 
 .connexion--title {
   font-family: League Script;
   font-weight: bold;  
-  font-size: 7.5rem; 
-  background: -webkit-linear-gradient(#ABA9FF, #F565A9);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; 
+  font-size: 6rem; 
 }
 
 .connexion--form {
@@ -62,6 +48,16 @@ main {
   font-size: 1rem; 
 }
 
+.connexion--submit:hover {
+  border: 2px solid transparent;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: linear-gradient(#fff, #fff), linear-gradient(#ABA9FF , #F565A9);
+  color: #ABA9FF;
+  transition-duration: 0.35s;
+}
+}
+
 .inscription--link::before {
   content: "";
   display: block;
@@ -72,14 +68,3 @@ main {
   transition: all 0.5s; 
   transform: translateY(-30px);
 } */
-
-h1,h2,h3,p,ul{
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  font-weight: 100;
-}
-
-*{
-  box-sizing: border-box;
-}
