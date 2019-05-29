@@ -14,7 +14,13 @@
   require './elements/header.php'
   ?>
   <h1>Créer votre topic</h1>
-  <p><?php echo $_GET['message'];?></p>
+  <?php
+  if (isset($_GET['message'])) {
+    ?>
+    <p><?php echo $_GET['message']; ?></p>
+  <?php
+}
+?>
   <form action="createTopics.php" method="POST">
     <label for="title">Nom du topic:</label>
     <input type="text" name="title" id="title">
