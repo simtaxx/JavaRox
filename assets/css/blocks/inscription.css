@@ -1,0 +1,178 @@
+.sign-up {
+  background-image: url(../../img/background.jpg);
+  background-size: cover;
+}
+
+.container {
+background: rgba(255, 254, 254, 0.925);
+height: 95vh;
+transform: translateY(2.5vh);
+width: 95%;
+margin: 0 auto; 
+align-items: center;
+text-align: center;
+-webkit-box-shadow: 1px 1px 7px 0px rgba(0,0,0,0.5);
+-moz-box-shadow: 1px 1px 7px 0px rgba(0,0,0,0.5);
+box-shadow: 1px 1px 7px 0px rgba(0,0,0,0.5);
+display: flex; 
+flex-direction: column; 
+justify-content: space-around; 
+}
+
+ .log--title {
+font-family: League Script;
+background: -webkit-linear-gradient(#F565A9, #ABA9FF);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent; 
+font-size: 7.5rem;
+letter-spacing: 0.05em;
+text-shadow: 0px 4.5px 3px rgba(0, 0, 0, 0.158);
+width: 100%; 
+}
+
+a {
+  text-decoration: none;
+}
+
+form {
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between; 
+  width: 100%; 
+}
+
+.form__inputs {
+  padding: 40px 0; 
+  display: flex;
+  width: 60%; 
+  margin: 0 auto; 
+  justify-content: space-around;
+}
+
+.form__inputs--left, .form__inputs--right {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  width: 50%;
+  height: 60%;
+}
+
+::placeholder {
+  font-style: italic;
+}
+
+.sign__input {
+  margin: 10px 0 0 0;
+  width: 250px;
+  height: 50px;
+  padding: 20px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.12);
+  border-radius: 50px;
+  border: 2px solid transparent;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: linear-gradient(#fff, #fff), linear-gradient(#ABA9FF , #F565A9);
+}
+
+.form__button {
+  width: 60%; 
+  margin: 0 auto; 
+}
+
+.submit__button {
+  cursor: pointer;
+  background: linear-gradient(163.93deg, #ABA9FF 36.54%, rgba(214, 250, 255, 0) 84.8%), #F565A9;
+  margin: 25px 0 0 0;
+  width: 200px;
+  height: 50px;
+  padding: 20px;
+  line-height: 3px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.12);
+  border-radius: 50px;
+  color: white;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  border: none;
+  transition: all 0.5s; 
+  text-transform: uppercase; 
+}
+
+.submit__button:hover {
+  border: 2px solid transparent;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: linear-gradient(#fff, #fff), linear-gradient(#ABA9FF , #F565A9);
+  color: #ABA9FF;
+  transition-duration: 0.35s;
+}
+
+textarea {
+  margin: 10px 0 10px 0;
+  height: 25px;
+  width: 19.6%;
+  transition: .25s ease-in-out;
+  overflow:hidden;
+  line-height: 5px;
+}
+
+textarea:focus {
+  height: 100px;
+  border-radius: 20px;
+}
+
+input[type=file] {
+  transform: translateY(15px);
+  cursor: pointer;
+}
+
+strong {
+  background: -webkit-linear-gradient(#F565A9, #ABA9FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.terms {
+  margin: 20px 0 20px 0;
+}
+
+.terms p, .terms a {
+  font-size: 0.8rem;
+  font-weight: bold;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+  stroke: white;
+}
+
+a {
+  font-size: 0.8rem;
+}
+
+
+.message p {
+  letter-spacing: 0.5px;
+  font-size: 1rem; 
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  line-height: 1.5;
+}
+
+.connexion--form {
+  width: 60%;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;  
+}
+
+.terms--log::before {
+  content: "";
+  display: block;
+  width: 60%;
+  margin: 0 auto; 
+  background: linear-gradient(117.23deg, #ABA9FF 36.54%, rgba(214, 250, 255, 0) 84.8%), #F565A9;
+  height: 2px;
+  transition: all 0.5s; 
+  transform: translateY(-30px);
+}
+
+

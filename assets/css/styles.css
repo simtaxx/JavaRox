@@ -1,0 +1,11 @@
+@import './vendors/reset.css';
+@import './vendors/fonts.css';
+
+@import './blocks/header.css';
+@import './blocks/footer.css';
+@import './blocks/connexion.css';
+@import './blocks/inscription.css';
+
+body {
+  font-family: Segoe UI, sans-serif;
+}
