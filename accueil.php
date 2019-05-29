@@ -27,7 +27,7 @@ foreach ($allTopics as $Topics) {
 
     ?>
     <div>
-        <a href="/topic.php?idTopic=<?php echo $Topics->id(); ?>">
+        <a href="./topic.php?idTopic=<?php echo $Topics->id(); ?>">
             <h2><?php echo $Topics->title(); ?></h2>
             <p><?php
                 $user = Entity\Bdd::getUserById($Topics->idUser());

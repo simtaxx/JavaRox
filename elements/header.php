@@ -23,7 +23,7 @@
     </ul>
   </nav>
   <div class="btn--container">
-    <button class="btn">Nouveau Post</button>
+    <button class="btn"><a href="./topicsCreate.php">Nouveau Post</a></button>
   </div>
   <div class="userImg--container">
     <img class="userImg--cover" src="" alt="">

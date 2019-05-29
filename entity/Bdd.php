@@ -19,7 +19,7 @@ class Bdd
       self::$pdo = new \PDO(
         'mysql:host=localhost;dbname=youtaites;',
         'root',
-        '',
+        'root',
         [
           PDO::ATTR_ERRMODE             => PDO::ERRMODE_WARNING,
           PDO::MYSQL_ATTR_INIT_COMMAND  => 'SET NAMES utf8',
@@ -126,5 +126,18 @@ class Bdd
       array_push($allLikes, $like);
     }
     return $allLikes;
+  }
+
+  public static function getNbLikePost($id)
+  {
+    $stmt = self::getDatabaseConnect()->prepare("SELECT * FROM aimer where id_post = :id;");
+    $stmt->execute(['id' => $id]);
+    $allCommentsSQL = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $allComments = [];
+    foreach ($allCommentsSQL as $value) {
+      $comment = new Commentaires($value['id_comment'],$value['content_comment'], $value['id_post'],$value['id_user'],$value['date_comment']);
+      array_push($allComments, $comment);
+    }
+    return $allComments;
   }
 }

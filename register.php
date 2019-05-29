@@ -10,7 +10,26 @@ if (!isset($_POST['valider'])) {
   header('Location: inscription.php?message=' . $message);
   exit();
 } else {
-  if (empty($_POST['pseudo'])) {
+
+$pseudo = $_POST['pseudo'];
+$email = $_POST['email'];
+$mdp1 = $_POST['mdp1'];
+$mdp2 = $_POST['mdp2'];
+function removeslashes($string)
+{
+  $string=implode("",explode("\\",$string));
+  return stripslashes(trim($string));
+}
+function security($string){
+  $string = trim($string);
+  $string = removeslashes($string);
+  $string = htmlspecialchars($string);
+
+  return $string;
+}
+$pseudo = security($pseudo);
+$email = security($email);
+  if (empty($pseudo)) {
     $message = 'Pseudo non rempli !';
     header('Location: inscription.php?message=' . $message);
     exit();
@@ -18,19 +37,19 @@ if (!isset($_POST['valider'])) {
     $message = 'Pseudo deja pris !';
     header('Location: inscription.php?message=' . $message);
     exit();
-  } elseif (strlen($_POST['pseudo']) < 2 or strlen($_POST['pseudo']) > 15) {
+  } elseif (strlen($pseudo) < 2 or strlen($pseudo) > 15) {
     $message = 'le pseudo doit contenir entre 2 & 15 caractères !';
     header('Location: inscription.php?message=' . $message);
     exit();
-  } elseif (!preg_match('/^[a-zA-Z0-9_]+$/', $_POST['pseudo'])) {
+  } elseif (!preg_match('/^[a-zA-Z0-9_]+$/', $pseudo)) {
     $message = 'Caractères non-autorisés dans le pseudos !';
     header('Location: inscription.php?message=' . $message);
     exit();
-  } elseif (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+  } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $message = 'Mail invalide !';
     header('Location: inscription.php?message=' . $message);
     exit();
-  } elseif ($_POST['mdp1'] != $_POST['mdp2']) {
+  } elseif ($mdp1 != $mdp2) {
     $message = 'Les mots de passes sont different !';
     header('Location: inscription.php?message=' . $message);
     exit();
@@ -45,14 +64,14 @@ if (!isset($_POST['valider'])) {
     // $_FILES['icone']['size']     //La taille du fichier en octets.
     // $_FILES['icone']['tmp_name'] //L'adresse vers le fichier uploadé dans le répertoire temporaire.
     // $_FILES['icone']['error']    //Le code d'erreur, qui permet de savoir si le fichier a bien été uploadé.
-    $hash = password_hash($_POST['mdp1'], PASSWORD_DEFAULT);
+    $hash = password_hash($mdp1, PASSWORD_DEFAULT);
     $newUser = new Entity\User(
       '',
-      $_POST['pseudo'],
+      $pseudo,
       $hash,
-      $_POST['pseudo'],
+      $pseudo,
       $_POST['description'],
-      $_POST['email'],
+      $email,
       $_POST['website']
     );
     $newUser->saveBdd();

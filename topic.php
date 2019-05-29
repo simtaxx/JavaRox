@@ -8,6 +8,7 @@ $topic = Entity\Bdd::getOneTopic($_GET['idTopic']);
 $post = Entity\Bdd::getOnePost($_GET['idTopic']);
 $createur = Entity\Bdd::getUserById($topic->idUser());
 $comments = Entity\Bdd::getAllComments($post->id());
+$nbLikePost = Entity\Bdd::getNbLikePost($post->id());
 ?>
 
 <p>Publier par <?php echo $createur->pseudo() ?> le <?php echo $post->date() ?></p>
