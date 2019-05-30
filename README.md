@@ -1,10 +1,10 @@
-INSTRUCTIONS
+<b>INSTRUCTIONS</b>
 
-Installer Composer
+Installer <b>Composer</b>
 
-Cloner le répositorie dans htdocs
+Cloner le répositorie dans <b>htdocs</b>
 
-Importer la base de données (youtaites.sql)
+Importer la base de données (<b>youtaites.sql</b>)
 
-Si besoin, modifier les paramètres de connexion (entity/Bdd.php)
+Si besoin, modifier les paramètres de connexion (<b>entity/Bdd.php</b>)
 
