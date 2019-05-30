@@ -11,7 +11,7 @@
     </ul>
   </nav>
   <div class="btn--container">
-    <button class="btn"><a href="./topicsCreate.php">Nouveau Post</a></button>
+    <button class="btn"><a href="./topicsCreate.php">Nouveau Topic</a></button>
   </div>
   <div class="userImg--container">
     <div class="logOut"><a href="./deconnexion.php">Déconnexion</a></div>

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="./assets/css/styles.css">
-  <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Accueil</title>
+	<link rel="stylesheet" href="./assets/css/styles.css">
+	<link href="https://fonts.googleapis.com/css?family=League+Script&display=swap" rel="stylesheet">
 </head>
 
 <body class="create__container">
@@ -28,7 +29,7 @@
       <form action="createTopics.php" method="POST" class="topicscreate">
 
         <div class="topicscreate--left">
-          <label for="title" class="topic__title">Titre du poste :</label>
+          <label for="title" class="topic__title">Titre :</label>
           <input type="text" name="title" id="title" class="topic__title--content">
         </div>
 
@@ -42,8 +43,3 @@
       </form>
     </div>
   </div>
-
-   <?php require './elements/footer.php' ?> 
-</body>
-
-</html>
