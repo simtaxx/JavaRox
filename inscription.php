@@ -27,7 +27,7 @@
 
         <?php } ?>
 
-        <form action="register.php" method="POST" enctype="multipart/form-data">
+        <form action="register.php" method="POST" enctype="multipart/form-data" class="signup">
           <div class="form__inputs">
             <div class="form__inputs--left">
               <input class="sign__input" type="text" name="pseudo" id="pseudo" placeholder="Pseudo">
@@ -37,7 +37,7 @@
             </div>
             <div class="form__inputs--right">
               <input class="sign__input" type="text" name="website" id="website" placeholder="Lien de votre site (facultatif)">
-              <textarea class="sign__input" name="description" id="description" cols="30" rows="10" placeholder="Votre bio (facultatif)"></textarea>
+              <textarea class="sign__input" name="description" id="description" cols="30" rows="10" placeholder="Votre bio (facultatif)" class="signup--text"></textarea>
               <div class="add__img">
                 <label for="file">Ajouter une photo de profil</label>
                 <input class="test" id="file" type="file" name="image"/>
