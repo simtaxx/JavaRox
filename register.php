@@ -77,8 +77,8 @@ if (!isset($_POST['valider'])) {
       if ($_FILES['image']['size'] <= $taillemax) {
         $extensionUpload = strtolower(substr(strrchr($_FILES['image']['name'], '.'), 1));
         if (in_array($extensionUpload, $extensionsValides)) {
-          $lastIdUser = Entity\Bdd::getLastIdUser();
-          $newIdUser = $lastIdUser[0] + 1;
+          $lastUser = Entity\Bdd::getLastUser();
+          $newIdUser = $lastUser->id() + 1;
           $chemin = './assets/img/ppImg' . '/' . $newIdUser . '.' . $extensionUpload;
           $resultat = move_uploaded_file($_FILES['image']['tmp_name'], $chemin);
           if (!$resultat) {
@@ -97,11 +97,6 @@ if (!isset($_POST['valider'])) {
         exit();
       }
     }
-    // $_FILES['icone']['name']     //Le nom original du fichier, comme sur le disque du visiteur (exemple : mon_icone.png).
-    // $_FILES['icone']['type']     //Le type du fichier. Par exemple, cela peut être « image/png ».
-    // $_FILES['icone']['size']     //La taille du fichier en octets.
-    // $_FILES['icone']['tmp_name'] //L'adresse vers le fichier uploadé dans le répertoire temporaire.
-    // $_FILES['icone']['error']    //Le code d'erreur, qui permet de savoir si le fichier a bien été uploadé.
     $hash = password_hash($mdp1, PASSWORD_DEFAULT);
     $newUser = new Entity\User(
       '',

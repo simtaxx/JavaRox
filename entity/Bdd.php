@@ -152,4 +152,12 @@ class Bdd
     $comment = new Commentaires($value['id_comment'], $value['content_comment'], $value['id_post'], $value['id_user'], $value['date_comment']);
     return $comment;
   }
+
+  public static function getLastUser()
+  {
+    $stmt = self::getDatabaseConnect()->query(" SELECT * FROM users ORDER BY id_user DESC LIMIT 1");
+    $lastUser= $stmt->fetch();
+    $user = new User($lastUser['id_user'], $lastUser['pseudo_user'], $lastUser['password_user'], $lastUser['description_user'], $lastUser['picture_user'], $lastUser['mail_user'], $lastUser['website_user']);
+    return $user;
+  }
 }
