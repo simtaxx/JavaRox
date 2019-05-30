@@ -1,0 +1,43 @@
+main {
+  width: 100vw; 
+  margin: 0 auto; 
+}
+
+.home--bg {
+  background-image: url(../../img/background.jpg);
+  background-size: cover;
+  background-position: center; 
+  width: 100vw; 
+  height: 100vh;
+  z-index: -1;
+  position: fixed;
+  top: 0; 
+}
+
+.home {
+  width: 100%; 
+  padding: 10% 15% 5% 15%; 
+}
+
+.home--post {
+  border: 3px solid transparent;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: linear-gradient(#fff, #fff), linear-gradient(#ABA9FF , #F565A9);
+  padding: 10px; 
+  margin-bottom: 40px;  
+}
+
+.home--post a {
+  color: black; 
+  line-height: 2; 
+}
+
+.home__post--title {
+  font-weight: bold; 
+}
+
+.home--pseudo {
+  color: #ABA9FF; 
+  font-weight: bold; 
+}
