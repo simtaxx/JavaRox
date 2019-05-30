@@ -128,13 +128,13 @@
   width: 100%; 
   display: flex; 
   align-items: flex-end; 
+  justify-content: flex-end; 
 }
 
 .delete {
   border: solid; 
   border: none; 
   cursor: pointer;
-  text-align: right; 
 }
 
 .delete:hover {
