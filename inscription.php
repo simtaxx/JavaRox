@@ -38,7 +38,10 @@
             <div class="form__inputs--right">
               <input class="sign__input" type="text" name="website" id="website" placeholder="Lien de votre site (facultatif)">
               <textarea class="sign__input" name="description" id="description" cols="30" rows="10" placeholder="Votre bio (facultatif)"></textarea>
-              <input class="test" type="file" name="image" />
+              <div class="add__img">
+                <label for="file">Ajouter une photo de profil</label>
+                <input class="test" id="file" type="file" name="image"/>
+              </div>
             </div>
           </div>
 
@@ -47,9 +50,12 @@
           </div>
         </form>
 
-        <div class="terms">
-          <p>En créant votre compte, vous confirmez que vous avez lu</p>
-          <p>et accepté les <strong>Termes de service</strong></p>
+        <aside class="terms terms--sign">
+          <p>Vous êtes déjà un Youtaite ?</p><strong><a href="./index.php">Connectez-vous</a></strong>
+        </aside>
+
+        <div class="conditions">
+          <p>En créant votre compte, vous confirmez que vous avez lu et accepté les <strong>Termes de service</strong></p>
         </div>
 
   </section>
