@@ -34,7 +34,7 @@ a {
   text-decoration: none;
 }
 
-form {
+.signup {
   display: flex; 
   flex-direction: column; 
   justify-content: space-between; 
@@ -101,16 +101,16 @@ form {
   transform: scale(1.1);
 }
 
-textarea {
+.signup--text {
   margin: 10px 0 10px 0;
   height: 25px;
   width: 19.6%;
   transition: .25s ease-in-out;
-  overflow:hidden;
+  overflow: hidden;
   line-height: 5px;
 }
 
-textarea:focus {
+.signup--text:focus {
   height: 100px;
   border-radius: 20px;
 }
