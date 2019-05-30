@@ -5,7 +5,3 @@
 @import './blocks/footer.css';
 @import './blocks/connexion.css';
 @import './blocks/inscription.css';
-
-body {
-  font-family: Segoe UI, sans-serif;
-}

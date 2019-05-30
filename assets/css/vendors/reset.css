@@ -4,74 +4,10 @@ body {
   margin: 0;
 }
 
-
-
 main {
   width: 98vw; 
   margin: 0 auto; 
 }
-
-/* .connexion {
-  width: 60%; 
-  height: 80vh;
-  transform: translateY(5vh);
-  margin: 0 auto; 
-  display: flex; 
-  flex-direction: column; 
-  justify-content: space-between; 
-  align-items: center; 
-}
-
-.connexion--title {
-  font-family: League Script;
-  font-weight: bold;  
-  font-size: 7.5rem; 
-  background: -webkit-linear-gradient(#ABA9FF, #F565A9);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; 
-}
-
-.connexion--form {
-  display: flex; 
-  flex-direction: column; 
-  justify-content: space-between; 
-  align-content: center; 
-  height: 40%;
-  width: 100%; 
-}
-
-.connexion--input {
-  border-radius: 40px; 
-  padding: 20px; 
-  width: 50%; 
-  margin: 0 auto; 
-  border: 2px solid transparent;
-  background-clip: padding-box, border-box;
-  background-origin: padding-box, border-box;
-  background-image: linear-gradient(#fff, #fff), linear-gradient(#ABA9FF , #F565A9);
-}
-
-.connexion--submit {
-  cursor: pointer;
-  border-radius: 40px; 
-  padding: 15px; 
-  width: 25%; 
-  margin: 0 auto; 
-  background: linear-gradient(117.23deg, #ABA9FF 36.54%, rgba(214, 250, 255, 0) 84.8%), #F565A9;
-  color: white; 
-  font-size: 1rem; 
-}
-
-.inscription--link::before {
-  content: "";
-  display: block;
-  width: 50%;
-  margin: 0 auto; 
-  background: linear-gradient(117.23deg, #ABA9FF 36.54%, rgba(214, 250, 255, 0) 84.8%), #F565A9;
-  height: 2px;
-  transition: all 0.5s; 
-  transform: translateY(-30px);
-} */
 
 h1,h2,h3,p,ul{
   margin: 0;
