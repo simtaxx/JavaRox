@@ -35,10 +35,10 @@
 
 				<?php if ($_SESSION['user']->id() == $Topics->idUser() or $_SESSION['user']->pseudo() == "admin") { ?>
 
-					<!-- <form action="deleteTopics.php" method="POST">
-						<input type="submit" value="Supprimer" name="Supprimer">
+					<form class="delete--container" action="deleteTopics.php" method="POST">
+						<input class="delete" type="submit" value="Supprimer" name="Supprimer">
 						<input type="hidden" name="idTopic" value="<?php echo $Topics->id() ?>">
-					</form> -->
+					</form>
 
 				<?php } ?>
 			</div>

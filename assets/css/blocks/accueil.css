@@ -26,6 +26,11 @@ main {
   background-image: linear-gradient(#fff, #fff), linear-gradient(#ABA9FF , #F565A9);
   padding: 10px; 
   margin-bottom: 40px;  
+  transition: all 0.5s; 
+}
+
+.home--post:hover {
+  transform: scale(1.05);
 }
 
 .home--post a {
