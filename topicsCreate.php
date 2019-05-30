@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Accueil</title>
+	<title>Nouveau Topic</title>
 	<link rel="stylesheet" href="./assets/css/styles.css">
 	<link href="https://fonts.googleapis.com/css?family=League+Script&display=swap" rel="stylesheet">
 </head>
@@ -21,7 +21,7 @@
       <h1 class="topicscreate__title">Créer un nouveau topic</h1>
       
       <?php if (isset($_GET['message'])) { ?>
-      <p><?php echo $_GET['message']; ?></p>
+      <p class="msg"><?php echo $_GET['message']; ?></p>
       <?php }?>
     </div>
     

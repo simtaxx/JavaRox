@@ -23,7 +23,7 @@
 
     <?php if (isset($_GET['message'])) { ?>
 
-      <p><?php echo $_GET['message'] ?><p>
+      <p class="msg"><?php echo $_GET['message'] ?><p>
 
         <?php } ?>
 

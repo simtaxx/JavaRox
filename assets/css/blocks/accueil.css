@@ -47,3 +47,18 @@ main {
   color: #ABA9FF; 
   font-weight: bold; 
 }
+
+@keyframes dissapear {
+  to {
+    opacity: 0; 
+  }
+}
+
+.msg {
+  font-size: 0.8rem; 
+  padding: 10px; 
+}
+
+.msg--court {
+  /* animation: dissapear 10s forwards;  */
+}
