@@ -112,7 +112,6 @@ nav a {
   justify-content: space-between; 
   align-items: center; 
   padding: 0 20px 0 40px; 
-  cursor: pointer;
 }
 
 .userImg--cover {
@@ -123,9 +122,11 @@ nav a {
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
   background-image: linear-gradient(#fff, #fff), linear-gradient(#ABA9FF , #F565A9);
+  cursor: pointer;
 }
 
 .logOut {
   height: 100%;
   text-align: center; 
+  cursor: pointer;
 }

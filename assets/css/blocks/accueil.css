@@ -1,6 +1,7 @@
 main {
   width: 100vw; 
   margin: 0 auto; 
+  min-height: 100vh;
 }
 
 .home--bg {
