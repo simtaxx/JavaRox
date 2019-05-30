@@ -57,6 +57,14 @@ $email = security($email);
     $message = 'Email deja utiliser!';
     header('Location: inscription.php?message=' . $message);
     exit();
+  } elseif (empty($mdp1)) {
+    $message = 'Mot de passe non rempli !';
+    header('Location: inscription.php?message=' . $message);
+    exit();
+  } elseif (empty($mdp2)) {
+    $message = 'Mot de passe non rempli !';
+    header('Location: inscription.php?message=' . $message);
+    exit();
   } else {
     var_dump($_FILES);
     // $_FILES['icone']['name']     //Le nom original du fichier, comme sur le disque du visiteur (exemple : mon_icone.png).
