@@ -1,3 +1,3 @@
 <footer class="footer">
-    <p>© Toutes les images sont la propriété de leurs auteurs respectifs.</p>
+    <p>JavaRox's Team | Copyrights© 2019.</p>
 </footer>
