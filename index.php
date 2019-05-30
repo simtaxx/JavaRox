@@ -35,10 +35,6 @@
     </aside>
 
   </section>
-
-
-
-  <!-- <?php require './elements/footer.php' ?> -->
 </body>
 
 </html>

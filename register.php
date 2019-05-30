@@ -7,7 +7,7 @@ $mail = $bdd->getUserByMail($_POST['email'])->mail();
 $message = "";
 $chemin = "";
 if (!isset($_POST['valider'])) {
-  $message = 'Formulaire non envoyé !';
+  $message = 'Le formulaire n\'a pas été envoyé';
   header('Location: inscription.php?message=' . $message);
   exit();
 } else {
@@ -32,19 +32,19 @@ if (!isset($_POST['valider'])) {
   $pseudo = security($pseudo);
   $email = security($email);
   if (empty($pseudo)) {
-    $message = 'Pseudo non rempli !';
+    $message = 'Veuillez choisir un pseudo';
     header('Location: inscription.php?message=' . $message);
     exit();
   } elseif ($user->pseudo() != null) {
-    $message = 'Pseudo deja pris !';
+    $message = 'Ce pseudo est déjà utilisé';
     header('Location: inscription.php?message=' . $message);
     exit();
   } elseif (strlen($pseudo) < 2 or strlen($pseudo) > 15) {
-    $message = 'le pseudo doit contenir entre 2 & 15 caractères !';
+    $message = 'Votre pseudo doit contenir entre 2 & 15 caractères !';
     header('Location: inscription.php?message=' . $message);
     exit();
   } elseif (!preg_match('/^[a-zA-Z0-9_]+$/', $pseudo)) {
-    $message = 'Caractères non-autorisés dans le pseudos !';
+    $message = 'Caractères non-autorisés dans le pseudo !';
     header('Location: inscription.php?message=' . $message);
     exit();
   } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -52,19 +52,19 @@ if (!isset($_POST['valider'])) {
     header('Location: inscription.php?message=' . $message);
     exit();
   } elseif ($mdp1 != $mdp2) {
-    $message = 'Les mots de passes sont different !';
+    $message = 'Les mots de passes sont differents !';
     header('Location: inscription.php?message=' . $message);
     exit();
   } elseif ($mail != null) {
-    $message = 'Email deja utiliser!';
+    $message = 'Cette email est déjà utilisé !';
     header('Location: inscription.php?message=' . $message);
     exit();
   } elseif (empty($mdp1)) {
-    $message = 'Mot de passe non rempli !';
+    $message = 'Veuillez choisir un mot de passe';
     header('Location: inscription.php?message=' . $message);
     exit();
   } elseif (empty($mdp2)) {
-    $message = 'Mot de passe non rempli !';
+    $message = 'Veuillez choisir un mot de passe';
     header('Location: inscription.php?message=' . $message);
     exit();
   } else {
@@ -82,17 +82,17 @@ if (!isset($_POST['valider'])) {
           $chemin = './assets/img/ppImg' . '/' . $newIdUser . '.' . $extensionUpload;
           $resultat = move_uploaded_file($_FILES['image']['tmp_name'], $chemin);
           if (!$resultat) {
-            $message = 'Erreur importation de l image!';
+            $message = 'L\'image n\'a pas été importée !';
             header('Location: inscription.php?message=' . $message);
             exit();
           }
         } else {
-          $message = 'Extension non valide (jpg, jpeg, gif ou png!';
+          $message = 'Extension non valide (jpg, jpeg, gif ou png !';
           header('Location: inscription.php?message=' . $message);
           exit();
         }
       } else {
-        $message = 'Taille de l image supperieur a 2Mo!';
+        $message = 'Taille de l\'image suppérieure a 2Mo !';
         header('Location: inscription.php?message=' . $message);
         exit();
       }
@@ -112,7 +112,7 @@ if (!isset($_POST['valider'])) {
     $newUser->setId($lastId[0]);
     session_start();
     $_SESSION['user'] = $newUser;
-    $message = 'vous etes inscrit a Youtaites!';
+    $message = 'Vous êtes inscrit sur Youtaites !';
     header('Location: accueil.php?message=' . $message);
     exit();
   }

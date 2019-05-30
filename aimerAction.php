@@ -7,10 +7,10 @@ echo $_POST['idPost'];
 $aimer = new Entity\Aimer($_SESSION['user']->id(), $_POST['idPost']);
 if ($aimer->existBdd() != null) {
   $aimer->deleteBdd();
-  $message = 'like supprimer!';
+  $message = 'Vous n\'aimez plus';
   header('Location: topic.php?idTopic=' . $_POST['idTopic'] . '&message=' . $message);
 } else {
   $aimer->saveBdd();
-  $message = 'Liker !';
+  $message = 'Vous avez aimé !';
   header('Location: topic.php?idTopic=' . $_POST['idTopic'] . '&message=' . $message);
 }

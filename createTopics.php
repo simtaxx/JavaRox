@@ -3,16 +3,16 @@ require './bootstrap.php';
 
 //verifier lenvoie du formulaire
 if (!isset($_POST['login_post'])) {
-  $message = 'formulaire non envoyé !';
+  $message = 'Le formulaire n\'a pas été enoyé';
     header('Location: topicsCreate.php?message=' . $message);
     exit();
 } else {
   if (empty($_POST['title'])) {
-    $message = 'titre non rempli!';
+    $message = 'Veuillez remplir le titre';
     header('Location: topicsCreate.php?message=' . $message);
     exit();
   } elseif(empty($_POST['content_post'])){
-    $message = 'contenu non rempli!';
+    $message = 'Le contenu est vide';
     header('Location: topicsCreate.php?message=' . $message);
     exit();
   } else {
@@ -24,7 +24,7 @@ if (!isset($_POST['login_post'])) {
     $newPost = new Entity\Post('', $_POST['title'], $_POST['content_post'], $date, $_SESSION['user']->id(), $lastId[0]);
     $newPost->saveBdd();
 
-    $message = 'Topics bien poster';
+    $message = 'Votre topic est publié';
     header('Location: accueil.php?message=' . $message);
     exit();
   }
