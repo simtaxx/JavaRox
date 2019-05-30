@@ -16,8 +16,8 @@
   </div>
   <nav>
     <ul class="nav--list">
-      <li class="nav--item"><a href="deconnexion.php">Déconnexion</a></li>
-      <li class="nav--item">Accueil</li>
+      <li class="nav--item"><a href="./deconnexion.php">Déconnexion</a></li>
+      <li class="nav--item"><a href="./accueil.php">Accueil</a></li>
       <li class="nav--item">Recrutement</li>
       <li class="nav--item">Tutoriel</li>
       <li class="nav--item">Catégories</li>

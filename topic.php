@@ -60,11 +60,12 @@ foreach ($comments as $comment) {
     </form>
     <p><?php echo $nbLikeComment;  ?></p>
     <?php
-    if ($_SESSION['user']->id() == $comment->idUser()) {
+    if ($_SESSION['user']->id() == $comment->idUser() or $_SESSION['user']->pseudo() == "admin") {
       ?>
       <form action="deleteComment.php" method="POST">
         <input type="submit" value="Supprimer" name="Supprimer">
         <input type="hidden" name="idComment" value="<?php echo $comment->id() ?>">
+        <input type="hidden" name="idTopic" value="<?php echo $_GET['idTopic'] ?>">
       </form>
     <?php
   }

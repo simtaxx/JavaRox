@@ -69,4 +69,34 @@ class Topics
     $topic = $stmt->fetch();
     return $topic;
   }
+
+  public function deleteBdd()
+  {
+    $idPost = Bdd::getOnePost($this->_id)->id();
+    $allComments = Bdd::getAllComments($idPost);
+    foreach ($allComments as $comment) {
+      $comment->deleteBdd();
+    }
+    $stmt = Bdd::getDatabaseConnect()->prepare(" DELETE FROM aimer
+    WHERE id_post = :id");
+    $stmt->execute(
+      [
+        'id'    => $idPost
+      ]
+    );
+    $stmt = Bdd::getDatabaseConnect()->prepare(" DELETE FROM post
+    WHERE id_post = :id");
+    $stmt->execute(
+      [
+        'id'    => $idPost
+      ]
+    );
+    $stmt = Bdd::getDatabaseConnect()->prepare(" DELETE FROM topic
+    WHERE id_topic = :id");
+    $stmt->execute(
+      [
+        'id'    => $this->_id
+      ]
+    );
+  }
 }

@@ -2,12 +2,12 @@
 <html lang="fr">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link rel="stylesheet" href="./assets/css/styles.css">
-  <link href="https://fonts.googleapis.com/css?family=League+Script&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=League+Script&display=swap" rel="stylesheet">
 </head>
 
 <?php require './elements/header.php';
@@ -34,6 +34,16 @@ foreach ($allTopics as $Topics) {
                 echo 'Poster par ' . $user->pseudo();
                 ?></p>
         </a>
+        <?php
+        if ($_SESSION['user']->id() == $Topics->idUser() or $_SESSION['user']->pseudo() == "admin") {
+            ?>
+            <form action="deleteTopics.php" method="POST">
+                <input type="submit" value="Supprimer" name="Supprimer">
+                <input type="hidden" name="idTopic" value="<?php echo $Topics->id() ?>">
+            </form>
+        <?php
+    }
+    ?>
     </div>
 <?php
 }
