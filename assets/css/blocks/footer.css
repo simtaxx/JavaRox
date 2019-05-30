@@ -1,9 +1,7 @@
 footer {
-  position: absolute; 
   display: flex;
   align-items: center;
   justify-content: center; 
-  bottom: 0;  
   width: 100vw;
   height: 3.5vw;  
   background: linear-gradient(163.93deg, #ABA9FF 36.54%, rgba(214, 250, 255, 0) 84.8%), #F565A9;
