@@ -94,4 +94,22 @@ class Commentaires
     $commentaire = $stmt->fetch();
     return $commentaire;
   }
+
+public function deleteBdd()
+  {
+    $stmt = Bdd::getDatabaseConnect()->prepare(" DELETE FROM liker
+    WHERE id_comment = :id");
+    $stmt->execute(
+      [
+        'id'    => $this->_id
+      ]
+    );
+    $stmt = Bdd::getDatabaseConnect()->prepare(" DELETE FROM commentaires
+    WHERE id_comment = :id");
+    $stmt->execute(
+      [
+        'id'    => $this->_id
+      ]
+    );
+  }
 }

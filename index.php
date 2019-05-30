@@ -24,7 +24,7 @@
       </div>
 
       <form class="connexion--form" action="connexion.php" method="POST">
-        <input class="sign__input" type="text" name="log" id="log" placeholder="Adresse e-mail">
+        <input class="sign__input" type="text" name="log" id="log" placeholder="Pseudo">
         <input class="sign__input" type="password" name="mdp" id="mdp" placeholder="Mot de passe">
         <input class="submit__button" type="submit" value="Se connecter">
       </form>

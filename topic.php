@@ -27,7 +27,7 @@ if (isset($_GET['message'])) {
 <p><?php echo $nbLikePost; ?></p>
 <div>
   <h2><?php
-            echo $topic->title() ?></h2>
+      echo $topic->title() ?></h2>
   <p><?php echo $post->content(); ?></p>
 </div>
 
@@ -58,7 +58,18 @@ foreach ($comments as $comment) {
       <input type="hidden" name="idComment" value="<?php echo $comment->id() ?>">
       <input type="hidden" name="idTopic" value="<?php echo $_GET['idTopic'] ?>">
     </form>
-      <p><?php echo $nbLikeComment ;  ?></p>
+    <p><?php echo $nbLikeComment;  ?></p>
+    <?php
+    if ($_SESSION['user']->id() == $comment->idUser()) {
+      ?>
+      <form action="deleteComment.php" method="POST">
+        <input type="submit" value="Supprimer" name="Supprimer">
+        <input type="hidden" name="idComment" value="<?php echo $comment->id() ?>">
+      </form>
+    <?php
+  }
+  ?>
+
   </div>
 <?php
 }

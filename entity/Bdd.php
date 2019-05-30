@@ -143,4 +143,13 @@ class Bdd
     $count = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $count[0]["count(*)"];
   }
+
+  public static function getOneComment($id)
+  {
+    $stmt = self::getDatabaseConnect()->prepare("SELECT * FROM commentaires where id_comment = :id");
+    $stmt->execute(['id' => $id]);
+    $value = $stmt->fetch(PDO::FETCH_ASSOC);
+      $comment = new Commentaires($value['id_comment'],$value['content_comment'], $value['id_post'],$value['id_user'],$value['date_comment']);
+    return $comment;
+  }
 }
