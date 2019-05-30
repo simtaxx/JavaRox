@@ -105,7 +105,5 @@ class Post
         'idTopic'        => $this->_idTopic
       ]
     );
-    $post = $stmt->fetch();
-    return $post;
   }
 }

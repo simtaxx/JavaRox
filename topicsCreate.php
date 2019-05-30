@@ -10,7 +10,7 @@
 
 <body>
   <?php
-  require_once __DIR__ . '/vendor/autoload.php';
+  require './bootstrap.php';
   require './elements/header.php'
   ?>
   <h1>Créer votre topic</h1>

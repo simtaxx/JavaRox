@@ -6,12 +6,11 @@ class Aimer
   private $_idUser;
   private $_idPost;
 
-  function __construct($idUser,$idPost)
+  function __construct($idUser, $idPost)
   {
 
     $this->_idUser = $idUser;
     $this->_idPost = $idPost;
-
   }
 
   // Liste des getters
@@ -48,8 +47,6 @@ class Aimer
         'idPost'    => $this->_idPost
       ]
     );
-    $user = $stmt->fetch();
-    return $user;
   }
 
   public function deleteBdd()

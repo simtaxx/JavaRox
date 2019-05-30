@@ -6,12 +6,11 @@ class Liker
   private $_idUser;
   private $_idComment;
 
-  function __construct($idUser,$idComment)
+  function __construct($idUser, $idComment)
   {
 
     $this->_idUser = $idUser;
     $this->_idComment = $idComment;
-
   }
 
   // Liste des getters
@@ -48,8 +47,6 @@ class Liker
         'idUser'      => $this->_idUser
       ]
     );
-    $user = $stmt->fetch();
-    return $user;
   }
 
   public function deleteBdd()

@@ -1,7 +1,6 @@
 <?php
-require_once __DIR__ . '/vendor/autoload.php';
+require './bootstrap.php';
 
-session_start();
 $nbComment = count(Entity\Bdd::getAllComments($_POST['idTopic']));
 echo $nbComment;
 //verifier lenvoie du formulaire
@@ -12,10 +11,6 @@ if (!isset($_POST['Publier'])) {
 } else {
   if (empty($_POST['content'])) {
     $message = 'Contenu vide!';
-    header('Location: topic.php?idTopic='. $_POST['idTopic'].'&message=' . $message);
-    exit();
-  } elseif (strlen($_POST['title']) > 100) {
-    $message = 'titre du post trop long!';
     header('Location: topic.php?idTopic='. $_POST['idTopic'].'&message=' . $message);
     exit();
   } else {
@@ -43,4 +38,3 @@ if (!isset($_POST['Publier'])) {
     exit();
   }
 }
-?>

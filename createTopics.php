@@ -1,7 +1,6 @@
 <?php
-require_once __DIR__ . '/vendor/autoload.php';
+require './bootstrap.php';
 
-session_start();
 //verifier lenvoie du formulaire
 if (!isset($_POST['login_post'])) {
   $message = 'formulaire non envoyé !';
@@ -30,4 +29,3 @@ if (!isset($_POST['login_post'])) {
     exit();
   }
 }
-?>

@@ -118,7 +118,5 @@ class User
         'website'     => $this->_website
       ]
     );
-    $user = $stmt->fetch();
-    return $user;
   }
 }

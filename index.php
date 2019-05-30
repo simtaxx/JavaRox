@@ -12,26 +12,27 @@
 
 <body class="sign-up">
   <?php
-  require_once __DIR__ . '/vendor/autoload.php';
-  // require './elements/header.php'
+  require './bootstrap.php';
 
   ?>
   <section class="container">
 
-      <h1 class="log--title">Youtaites</h1>
-      <div class="message">
-        <p>Veuillez-vous connecter</p>
-      </div>
+    <h1 class="log--title">Youtaites</h1>
+    <div class="message">
+      <p>Veuillez-vous connecter</p>
+    </div>
 
-      <form class="connexion--form" action="connexion.php" method="POST">
-        <input class="sign__input" type="text" name="log" id="log" placeholder="Pseudo">
-        <input class="sign__input" type="password" name="mdp" id="mdp" placeholder="Mot de passe">
-        <input class="submit__button" type="submit" value="Se connecter">
-      </form>
+    <form class="connexion--form" action="connexion.php" method="POST">
+      <input class="sign__input" type="text" name="log" id="log" placeholder="Pseudo">
+      <input class="sign__input" type="password" name="mdp" id="mdp" placeholder="Mot de passe">
+      <input class="submit__button" type="submit" value="Se connecter">
+    </form>
 
-      <strong ><a href="">Mot de passe oublié ?</a></strong>
+    <strong><a href="">Mot de passe oublié ?</a></strong>
 
-      <aside class="terms terms--log"><p>Vous n'êtes pas encore sur Youtaites ?</p><strong><a href="./inscription.php">Inscrivez-vous</a></strong></aside>
+    <aside class="terms terms--log">
+      <p>Vous n'êtes pas encore sur Youtaites ?</p><strong><a href="./inscription.php">Inscrivez-vous</a></strong>
+    </aside>
 
   </section>
 

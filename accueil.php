@@ -10,9 +10,9 @@
     <link href="https://fonts.googleapis.com/css?family=League+Script&display=swap" rel="stylesheet">
 </head>
 
-<?php require './elements/header.php';
-require_once __DIR__ . '/vendor/autoload.php';
-session_start();
+<?php
+require './bootstrap.php';
+require './elements/header.php';
 ?>
 
 <h1>Acceuil</h1>

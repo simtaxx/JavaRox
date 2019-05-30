@@ -84,7 +84,7 @@ class Bdd
     $stmt = self::getDatabaseConnect()->prepare("SELECT * FROM post where id_topic = :id;");
     $stmt->execute(['id' => $id]);
     $PostSQL = $stmt->fetch(PDO::FETCH_ASSOC);
-    $post = new Post($PostSQL['id_post'], $PostSQL['title_post'], $PostSQL['content_post'],$PostSQL['date_post'], $PostSQL['id_user'],$PostSQL['id_topic']);
+    $post = new Post($PostSQL['id_post'], $PostSQL['title_post'], $PostSQL['content_post'], $PostSQL['date_post'], $PostSQL['id_user'], $PostSQL['id_topic']);
     return $post;
   }
 
@@ -109,7 +109,7 @@ class Bdd
     $allCommentsSQL = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $allComments = [];
     foreach ($allCommentsSQL as $value) {
-      $comment = new Commentaires($value['id_comment'],$value['content_comment'], $value['id_post'],$value['id_user'],$value['date_comment']);
+      $comment = new Commentaires($value['id_comment'], $value['content_comment'], $value['id_post'], $value['id_user'], $value['date_comment']);
       array_push($allComments, $comment);
     }
     return $allComments;
@@ -122,7 +122,7 @@ class Bdd
     $allLikeSQL = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $allLikes = [];
     foreach ($allLikeSQL as $value) {
-      $like = new Liker($value['id_comment'],$value['id_user']);
+      $like = new Liker($value['id_comment'], $value['id_user']);
       array_push($allLikes, $like);
     }
     return $allLikes;
@@ -149,7 +149,7 @@ class Bdd
     $stmt = self::getDatabaseConnect()->prepare("SELECT * FROM commentaires where id_comment = :id");
     $stmt->execute(['id' => $id]);
     $value = $stmt->fetch(PDO::FETCH_ASSOC);
-      $comment = new Commentaires($value['id_comment'],$value['content_comment'], $value['id_post'],$value['id_user'],$value['date_comment']);
+    $comment = new Commentaires($value['id_comment'], $value['content_comment'], $value['id_post'], $value['id_user'], $value['date_comment']);
     return $comment;
   }
 }

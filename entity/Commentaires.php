@@ -91,11 +91,9 @@ class Commentaires
         'date'     => $this->_date
       ]
     );
-    $commentaire = $stmt->fetch();
-    return $commentaire;
   }
 
-public function deleteBdd()
+  public function deleteBdd()
   {
     $stmt = Bdd::getDatabaseConnect()->prepare(" DELETE FROM liker
     WHERE id_comment = :id");

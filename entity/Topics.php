@@ -66,8 +66,6 @@ class Topics
         'idUser'    =>   $this->_idUser
       ]
     );
-    $topic = $stmt->fetch();
-    return $topic;
   }
 
   public function deleteBdd()
