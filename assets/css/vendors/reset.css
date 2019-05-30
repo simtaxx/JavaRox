@@ -4,11 +4,6 @@ body {
   margin: 0;
 }
 
-main {
-  width: 98vw; 
-  margin: 0 auto; 
-}
-
 h1,h2,h3,p,ul{
   margin: 0;
   padding: 0;
