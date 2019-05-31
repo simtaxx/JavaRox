@@ -16,3 +16,4 @@ faites dans votre terminal:
 
 <b>composer require abraham/twitteroauth</b>
 
+Compte admin login:<b>admin</b> mdp:<b>azerty</b>
