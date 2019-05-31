@@ -20,7 +20,7 @@
 	<section class="home">
 		<?php $allTopics = Entity\Bdd::getAllTopics();
 				if (isset($_GET['message'])) { ?>
-				<!-- <p><?php echo $_GET['message']; ?></p> -->
+				<p class="msg"><?php echo $_GET['message']; ?></p>
 		<?php
 		}
 
@@ -30,7 +30,7 @@
 				<a href="./topic.php?idTopic=<?php echo $Topics->id(); ?>">
 					<h2 class="home__post--title"><?php echo $Topics->title(); ?></h2>
 					<p class="home__post--author"><?php $user = Entity\Bdd::getUserById($Topics->idUser()); echo 'Posté par ' . '<span class="home--pseudo">' . $user->pseudo() . '</span>'; ?></p>
-					<!-- <div class="home--comment"><a href="">Lire l'article</a></div> -->
+
 				</a>
 
 				<?php if ($_SESSION['user']->id() == $Topics->idUser() or $_SESSION['user']->pseudo() == "admin") { ?>

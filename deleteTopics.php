@@ -6,9 +6,9 @@ $topic = Entity\Bdd::getOneTopic($_POST['idTopic']);
 
 if (isset($_POST['Supprimer'])) {
   $topic->deleteBdd();
-  $message = 'Commentaire supprimer!';
+  $message = 'Votre topic est supprimé';
   header('Location: accueil.php?message=' . $message);
 } else {
-  $message = 'formulaire non envoyer!';
+  $message = 'Le formulaire n\'a pas été envoyé';
   header('Location: accueil.php?message=' . $message);
 }

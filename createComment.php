@@ -5,12 +5,12 @@ $nbComment = count(Entity\Bdd::getAllComments($_POST['idTopic']));
 echo $nbComment;
 //verifier lenvoie du formulaire
 if (!isset($_POST['Publier'])) {
-  $message = 'formulaire non envoyé !';
+  $message = 'Le formulaire n\'a pas été envoyé';
   header('Location: topic.php?idTopic='. $_POST['idTopic'].'&message=' . $message);
   exit();
 } else {
   if (empty($_POST['content'])) {
-    $message = 'Contenu vide!';
+    $message = 'Le contenu est vide';
     header('Location: topic.php?idTopic='. $_POST['idTopic'].'&message=' . $message);
     exit();
   } else {
@@ -33,7 +33,7 @@ if (!isset($_POST['Publier'])) {
       $connection->post('statuses/update', $parameters);
 
     }
-    $message = 'Topics bien poster';
+    $message = 'Votre commentaire est publié';
     header('Location: topic.php?idTopic='. $_POST['idTopic'].'&message=' . $message);
     exit();
   }
