@@ -51,7 +51,7 @@
         </form>
 
         <aside class="terms terms--sign">
-          <p>Vous êtes déjà un Youtaite ?</p><strong><a href="./index.php">Connectez-vous</a></strong>
+          <p>Vous êtes déjà un Youtaite ?</p><strong><a href="../index.php">Connectez-vous</a></strong>
         </aside>
 
         <div class="conditions">
