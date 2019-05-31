@@ -1,6 +1,6 @@
 <b>INSTRUCTIONS</b>
 
-Installer <b>Composer</b>
+Installer <b>Composer</b> sur votre machine.
 
 Cloner le répositorie dans <b>htdocs</b>
 
