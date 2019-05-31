@@ -201,3 +201,5 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2019-05-29 11:56:47
+insert into users values (1,'admin','$2y$10$aQlBbKqQVFoaInKDCMXkf.l4kTqEeZAWoeSPQlYBGBOxLUUCVYHRS','admin','../assets/img/ppImg/1.png','admin@admin.com','www.admin.com');
+
