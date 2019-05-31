@@ -1,5 +1,5 @@
 <?php
-require './bootstrap.php';
+require '../bootstrap.php';
 
 if ($_POST["log"] != null and $_POST["mdp"] != null) {
 
@@ -12,13 +12,13 @@ if ($_POST["log"] != null and $_POST["mdp"] != null) {
 
     $_SESSION['user'] = $user;
 
-    header('Location: accueil.php');
+    header('Location: ../views/accueil.php');
     exit();
   } else {
-    header('Location: index.php');
+    header('Location: ../index.php');
     exit();
   }
 } else {
-  header('Location: index.php');
+  header('Location: ../index.php');
   exit();
 }

@@ -1,17 +1,17 @@
 <?php
-require './bootstrap.php';
+require '../bootstrap.php';
 
 $nbComment = count(Entity\Bdd::getAllComments($_POST['idTopic']));
 echo $nbComment;
 //verifier lenvoie du formulaire
 if (!isset($_POST['Publier'])) {
   $message = 'Le formulaire n\'a pas été envoyé';
-  header('Location: topic.php?idTopic='. $_POST['idTopic'].'&message=' . $message);
+  header('Location: ../views/topic.php?idTopic='. $_POST['idTopic'].'&message=' . $message);
   exit();
 } else {
   if (empty($_POST['content'])) {
     $message = 'Le contenu est vide';
-    header('Location: topic.php?idTopic='. $_POST['idTopic'].'&message=' . $message);
+    header('Location: ../views/topic.php?idTopic='. $_POST['idTopic'].'&message=' . $message);
     exit();
   } else {
     $date = date("d-m-Y");
@@ -34,7 +34,7 @@ if (!isset($_POST['Publier'])) {
 
     }
     $message = 'Votre commentaire est publié';
-    header('Location: topic.php?idTopic='. $_POST['idTopic'].'&message=' . $message);
+    header('Location: ../views/topic.php?idTopic='. $_POST['idTopic'].'&message=' . $message);
     exit();
   }
 }

@@ -1,5 +1,5 @@
 <?php
-require './bootstrap.php';
+require '../bootstrap.php';
 
 $bdd = new Entity\Bdd();
 $user = $bdd->getUser($_POST['pseudo']);
@@ -8,7 +8,7 @@ $message = "";
 $chemin = "";
 if (!isset($_POST['valider'])) {
   $message = 'Le formulaire n\'a pas été envoyé';
-  header('Location: inscription.php?message=' . $message);
+  header('Location: ../views/inscription.php?message=' . $message);
   exit();
 } else {
 
@@ -33,39 +33,39 @@ if (!isset($_POST['valider'])) {
   $email = security($email);
   if (empty($pseudo)) {
     $message = 'Veuillez choisir un pseudo';
-    header('Location: inscription.php?message=' . $message);
+    header('Location: ../views/inscription.php?message=' . $message);
     exit();
   } elseif ($user->pseudo() != null) {
     $message = 'Ce pseudo est déjà utilisé';
-    header('Location: inscription.php?message=' . $message);
+    header('Location: ../views/inscription.php?message=' . $message);
     exit();
   } elseif (strlen($pseudo) < 2 or strlen($pseudo) > 15) {
     $message = 'Votre pseudo doit contenir entre 2 & 15 caractères !';
-    header('Location: inscription.php?message=' . $message);
+    header('Location: ../views/inscription.php?message=' . $message);
     exit();
   } elseif (!preg_match('/^[a-zA-Z0-9_]+$/', $pseudo)) {
     $message = 'Caractères non-autorisés dans le pseudo !';
-    header('Location: inscription.php?message=' . $message);
+    header('Location: ../views/inscription.php?message=' . $message);
     exit();
   } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $message = 'Mail invalide !';
-    header('Location: inscription.php?message=' . $message);
+    header('Location: ../views/inscription.php?message=' . $message);
     exit();
   } elseif ($mdp1 != $mdp2) {
     $message = 'Les mots de passes sont differents !';
-    header('Location: inscription.php?message=' . $message);
+    header('Location: ../views/inscription.php?message=' . $message);
     exit();
   } elseif ($mail != null) {
     $message = 'Cette email est déjà utilisé !';
-    header('Location: inscription.php?message=' . $message);
+    header('Location: ../views/inscription.php?message=' . $message);
     exit();
   } elseif (empty($mdp1)) {
     $message = 'Veuillez choisir un mot de passe';
-    header('Location: inscription.php?message=' . $message);
+    header('Location: ../views/inscription.php?message=' . $message);
     exit();
   } elseif (empty($mdp2)) {
     $message = 'Veuillez choisir un mot de passe';
-    header('Location: inscription.php?message=' . $message);
+    header('Location: ../views/inscription.php?message=' . $message);
     exit();
   } else {
     var_dump($_FILES);
@@ -79,21 +79,21 @@ if (!isset($_POST['valider'])) {
         if (in_array($extensionUpload, $extensionsValides)) {
           $lastUser = Entity\Bdd::getLastUser();
           $newIdUser = $lastUser->id() + 1;
-          $chemin = './assets/img/ppImg' . '/' . $newIdUser . '.' . $extensionUpload;
+          $chemin = '../assets/img/ppImg' . '/' . $newIdUser . '.' . $extensionUpload;
           $resultat = move_uploaded_file($_FILES['image']['tmp_name'], $chemin);
           if (!$resultat) {
             $message = 'L\'image n\'a pas été importée !';
-            header('Location: inscription.php?message=' . $message);
+            header('Location: ../views/inscription.php?message=' . $message);
             exit();
           }
         } else {
           $message = 'Extension non valide (jpg, jpeg, gif ou png !';
-          header('Location: inscription.php?message=' . $message);
+          header('Location: ../views/inscription.php?message=' . $message);
           exit();
         }
       } else {
         $message = 'Taille de l\'image suppérieure a 2Mo !';
-        header('Location: inscription.php?message=' . $message);
+        header('Location: ../views/inscription.php?message=' . $message);
         exit();
       }
     }
@@ -113,7 +113,7 @@ if (!isset($_POST['valider'])) {
     session_start();
     $_SESSION['user'] = $newUser;
     $message = 'Vous êtes inscrit sur Youtaites !';
-    header('Location: accueil.php?message=' . $message);
+    header('Location: ../views/accueil.php?message=' . $message);
     exit();
   }
 }

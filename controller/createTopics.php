@@ -1,19 +1,19 @@
 <?php
-require './bootstrap.php';
+require '../bootstrap.php';
 
 //verifier lenvoie du formulaire
 if (!isset($_POST['login_post'])) {
   $message = 'Le formulaire n\'a pas été enoyé';
-    header('Location: topicsCreate.php?message=' . $message);
+    header('Location: ../views/topicsCreate.php?message=' . $message);
     exit();
 } else {
   if (empty($_POST['title'])) {
     $message = 'Veuillez remplir le titre';
-    header('Location: topicsCreate.php?message=' . $message);
+    header('Location: ../views/topicsCreate.php?message=' . $message);
     exit();
   } elseif(empty($_POST['content_post'])){
     $message = 'Le contenu est vide';
-    header('Location: topicsCreate.php?message=' . $message);
+    header('Location: ../views/topicsCreate.php?message=' . $message);
     exit();
   } else {
     $newTopic = new Entity\Topics('', $_POST['title'], 0, $_SESSION['user']->id());
@@ -25,7 +25,7 @@ if (!isset($_POST['login_post'])) {
     $newPost->saveBdd();
 
     $message = 'Votre topic est publié';
-    header('Location: accueil.php?message=' . $message);
+    header('Location: ../views/accueil.php?message=' . $message);
     exit();
   }
 }

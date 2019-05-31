@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Inscription</title>
-  <link rel="stylesheet" href="./assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
   <link href="https://fonts.googleapis.com/css?family=League+Script&display=swap" rel="stylesheet">
 </head>
 
 <body class="sign-up">
   <section class="container">
-    <?php require './bootstrap.php';
+    <?php require '../bootstrap.php';
     ?>
 
     <h1 class="log--title">Youtaites</h1>
@@ -27,7 +27,7 @@
 
         <?php } ?>
 
-        <form action="register.php" method="POST" enctype="multipart/form-data" class="signup">
+        <form action="../controller/register.php" method="POST" enctype="multipart/form-data" class="signup">
           <div class="form__inputs">
             <div class="form__inputs--left">
               <input class="sign__input" type="text" name="pseudo" id="pseudo" placeholder="Pseudo">
@@ -60,7 +60,7 @@
 
   </section>
 
-  <!-- <?php require './elements/footer.php' ?> -->
+  <!-- <?php require '../elements/footer.php' ?> -->
 </body>
 
 </html>

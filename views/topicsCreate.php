@@ -6,14 +6,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Nouveau Topic</title>
-	<link rel="stylesheet" href="./assets/css/styles.css">
+	<link rel="stylesheet" href="../assets/css/styles.css">
 	<link href="https://fonts.googleapis.com/css?family=League+Script&display=swap" rel="stylesheet">
 </head>
 
 <body class="create__container">
   <?php
-  require './bootstrap.php';
-  require './elements/header.php'
+  require '../bootstrap.php';
+  require '../elements/header.php'
   ?>
 
   <div class="topicscreate__content">
@@ -26,7 +26,7 @@
     </div>
     
     <div class="topics__section--bottom">
-      <form action="createTopics.php" method="POST" class="topicscreate">
+      <form action="../controller/createTopics.php" method="POST" class="topicscreate">
 
         <div class="topicscreate--left">
           <label for="title" class="topic__title">Titre :</label>

@@ -14,7 +14,7 @@
     <button class="btn"><a href="./topicsCreate.php">Nouveau Topic</a></button>
   </div>
   <div class="userImg--container">
-    <div class="logOut"><a href="./deconnexion.php">Déconnexion</a></div>
+    <div class="logOut"><a href="../controller/deconnexion.php">Déconnexion</a></div>
     <img class="userImg--cover" src="<?php echo $_SESSION['user']->picture(); ?>" alt="">
   </div>
 </header>

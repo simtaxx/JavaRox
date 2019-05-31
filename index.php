@@ -22,7 +22,7 @@
       <p>Veuillez-vous connecter</p>
     </div>
 
-    <form class="connexion--form" action="connexion.php" method="POST">
+    <form class="connexion--form" action="./controller/connexion.php" method="POST">
       <input class="sign__input" type="text" name="log" id="log" placeholder="Pseudo">
       <input class="sign__input" type="password" name="mdp" id="mdp" placeholder="Mot de passe">
       <input class="submit__button" type="submit" value="Se connecter">
@@ -31,7 +31,7 @@
     <strong><a href="">Mot de passe oublié ?</a></strong>
 
     <aside class="terms terms--log">
-      <p>Vous n'êtes pas encore sur Youtaites ?</p><strong><a href="./inscription.php">Inscrivez-vous</a></strong>
+      <p>Vous n'êtes pas encore sur Youtaites ?</p><strong><a href="./views/inscription.php">Inscrivez-vous</a></strong>
     </aside>
 
   </section>

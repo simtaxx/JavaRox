@@ -6,13 +6,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Topic</title>
-	<link rel="stylesheet" href="./assets/css/styles.css">
+	<link rel="stylesheet" href="../assets/css/styles.css">
 	<link href="https://fonts.googleapis.com/css?family=League+Script&display=swap" rel="stylesheet">
 </head>
 
 <?php
-require './bootstrap.php';
-require './elements/header.php';
+require '../bootstrap.php';
+require '../elements/header.php';
 ?>
 
 <main>
@@ -42,7 +42,7 @@ require './elements/header.php';
     </div>
     
     <div class="like--section">
-      <form class="like--container"  class="addLike" action="aimerAction.php" method="POST">
+      <form class="like--container"  class="addLike" action="../controller/aimerAction.php" method="POST">
         <svg class="addLike" width="40" height="40" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g filter="url(#filter0_d)">
           <circle cx="16.5" cy="16.5" r="13.5" fill="#F565A9"/>
@@ -86,7 +86,7 @@ require './elements/header.php';
         </div>
 
         <div class="like--section">
-          <form class="like--container" action="likerAction.php" method="POST">
+          <form class="like--container" action="../controller/likerAction.php" method="POST">
             <svg class="addLike" width="40" height="40" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g filter="url(#filter0_d)">
               <circle cx="16.5" cy="16.5" r="13.5" fill="#F565A9"/>
@@ -119,7 +119,7 @@ require './elements/header.php';
 
         <?php if ($_SESSION['user']->id() == $comment->idUser() or $_SESSION['user']->pseudo() == "admin") { ?>
 
-        <form class="delete--container" action="deleteComment.php" method="POST">
+        <form class="delete--container" action="../controller/deleteComment.php" method="POST">
           <input class="delete" type="submit" value="Supprimer" name="Supprimer">
           <input type="hidden" name="idComment" value="<?php echo $comment->id() ?>">
           <input type="hidden" name="idTopic" value="<?php echo $_GET['idTopic'] ?>">
@@ -131,7 +131,7 @@ require './elements/header.php';
 
     <?php } ?>
 
-    <form class="comment--create" action="createComment.php" method="POST">
+    <form class="comment--create" action="../controller/createComment.php" method="POST">
       <textarea class="sign__input commentInput" name="content" id="content" cols="30" rows="10" placeholder="Écrire un commentaire..."></textarea>
       <input type="hidden" name="idPost" value="<?php echo $post->id() ?>">
       <input type="hidden" name="idTopic" value="<?php echo $_GET['idTopic'] ?>">
@@ -140,5 +140,5 @@ require './elements/header.php';
   </section>
 </main>
 
-<?php require './elements/footer.php' ?>
+<?php require '../elements/footer.php' ?>
 
