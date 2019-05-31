@@ -33,6 +33,12 @@ class Commentaires
     return $Parsedown->text($this->_content);
   }
 
+  public function contentNoParseDown()
+  {
+    return $this->_content;
+  }
+
+
   public function idPost()
   {
     return $this->_idPost;
@@ -107,6 +113,19 @@ class Commentaires
     $stmt->execute(
       [
         'id'    => $this->_id
+      ]
+    );
+  }
+
+  public function editBdd()
+  {
+    $stmt = Bdd::getDatabaseConnect()->prepare("UPDATE commentaires
+    SET content_comment = :content
+    WHERE id_comment = :id");
+    $stmt->execute(
+      [
+        'content'    => $this->_content,
+        'id' => $this->_id,
       ]
     );
   }
